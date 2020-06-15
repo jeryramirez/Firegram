@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:formvalidation/pages/bloc/provider.dart';
-import 'package:formvalidation/pages/home_page.dart';
+import 'package:formvalidation/src/bloc/provider.dart';
+import 'package:formvalidation/src/pages/home_page.dart';
 
-import 'pages/login_page.dart';
+import 'src/pages/login_page.dart';
+import 'src/pages/product_page.dart';
  
 void main() => runApp(MyApp());
  
@@ -17,6 +18,7 @@ class MyApp extends StatelessWidget {
         routes: {
           'home' : (BuildContext context) => HomePage(),
           'login' : (BuildContext context) => LogInPage(),
+          'product': (BuildContext context) => ProductPage(),
         },
         
       ),
