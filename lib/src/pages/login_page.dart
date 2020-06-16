@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:formvalidation/pages/bloc/logIn_bloc.dart';
-import 'package:formvalidation/pages/bloc/provider.dart';
+import 'package:formvalidation/src/bloc/logIn_bloc.dart';
+import 'package:formvalidation/src/bloc/provider.dart';
 
 class LogInPage extends StatelessWidget {
 

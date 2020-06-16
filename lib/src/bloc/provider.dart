@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:formvalidation/pages/bloc/logIn_bloc.dart';
+import 'package:formvalidation/src/bloc/logIn_bloc.dart';
 
 class Provider extends InheritedWidget{
 
@@ -12,7 +12,7 @@ class Provider extends InheritedWidget{
 
   static LogInBloc of (BuildContext context) {
 
-    return ( context.inheritFromWidgetOfExactType(Provider) as Provider ).loginBloc;
+    return ( context.dependOnInheritedWidgetOfExactType() as Provider ).loginBloc;
 
 
   }
