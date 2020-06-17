@@ -3,7 +3,7 @@ import 'package:formvalidation/src/bloc/logIn_bloc.dart';
 
 class Provider extends InheritedWidget{
 
-  final loginBloc = LogInBloc();
+  final logInBloc = LogInBloc();
 
   Provider({Key key, Widget child}) : super(key: key, child:child);
 
@@ -12,7 +12,7 @@ class Provider extends InheritedWidget{
 
   static LogInBloc of (BuildContext context) {
 
-    return ( context.dependOnInheritedWidgetOfExactType() as Provider ).loginBloc;
+    return ( context.inheritFromWidgetOfExactType(Provider) as Provider ).logInBloc;
 
 
   }

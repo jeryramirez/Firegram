@@ -3,7 +3,8 @@ import 'package:formvalidation/src/bloc/logIn_bloc.dart';
 import 'package:formvalidation/src/bloc/provider.dart';
 import 'package:formvalidation/src/providers/user_provider.dart';
 
-class LogInPage extends StatelessWidget {
+class SingInPage extends StatelessWidget {
+
 
   final userProvider = new UserProvider();
 
@@ -97,7 +98,7 @@ class LogInPage extends StatelessWidget {
             ),
             child: Column(
               children: <Widget>[
-                Text('Log in', style: TextStyle(fontSize: 18.0),),
+                Text('Create an account', style: TextStyle(fontSize: 18.0),),
                 SizedBox(height: 50,),
                 _email(bloc),
                 _password(bloc),
@@ -106,8 +107,8 @@ class LogInPage extends StatelessWidget {
             ),
           ),
           FlatButton(
-            child: Text('Create a new account'),
-            onPressed: () => Navigator.pushReplacementNamed(context, 'singin'),
+            child: Text('Do you have an account ?'),
+            onPressed: () => Navigator.pushReplacementNamed(context, 'login'),
           ),
           SizedBox(height: 100,)
         ],
@@ -189,7 +190,7 @@ class LogInPage extends StatelessWidget {
           child: Container(
             child: Text('Sing In', style: TextStyle(color: Colors.white)),
           ),
-          onPressed: snapshot.hasData == true ? () => logIn(context, bloc) : null,
+          onPressed: snapshot.hasData == true ? () => _logIn(context, bloc) : null,
 
         );
       }
@@ -198,9 +199,9 @@ class LogInPage extends StatelessWidget {
 
   }
 
-  logIn(BuildContext context, LogInBloc bloc) {
+  _logIn(BuildContext context, LogInBloc bloc) {
 
-    userProvider.login(bloc.email, bloc.password);
+    userProvider.newUser(bloc.email, bloc.password);
 
     // Navigator.pushReplacementNamed(context, 'home');
 
